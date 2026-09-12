@@ -84,6 +84,13 @@ Because the point is to audit the *stock* library — including skills your curr
 **What counts as a hub?**
 Inbound references ≥ 3. Those are your base skills: if you rename or break one, several skills silently degrade. The report names them so you can protect them.
 
+## Collaboration / 合作
+
+MIT, free to use. If you want your library audited at scale, this wired into your
+own agent framework, or the similarity signal swapped for an embedding backend —
+write to **hcac4735@agent.qq.com** with the subject `[skill-audit-kit]`, or open
+an issue.
+
 ## License
 
 MIT
