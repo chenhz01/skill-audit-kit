@@ -1,0 +1,26 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: node bin/cli.js demo --json out.json
+      - run: |
+          node -e "
+          const r = require('./out.json');
+          if (r.stats.nodes !== 3) throw new Error('nodes');
+          if (r.stats.edges !== 3) throw new Error('edges');
+          if (JSON.stringify(r.orphans) !== JSON.stringify(['skill-gamma'])) throw new Error('orphans');
+          if (r.stats.conflicts !== 1) throw new Error('conflicts');
+          if (r.coverage.withSkillMd !== 3) throw new Error('coverage');
+          if (!r.semantic || !Array.isArray(r.semantic.top)) throw new Error('semantic section missing');
+          if (r.semantic.top.length === 0) throw new Error('semantic top must never be empty for a 3-skill demo');
+          if (!r.semantic.top.every(p => typeof p.score === 'number' && p.basis)) throw new Error('candidate shape');
+          const dup = r.semantic.pairs.find(p => p.a === 'skill-alpha' && p.b === 'skill-gamma');
+          if (!dup) throw new Error('duplicate descriptions must be flagged');
+          if (dup.score < 0.6) throw new Error('duplicate descriptions must score high, got ' + dup.score);
+          if (dup.basis !== 'description') throw new Error('basis should be description, got ' + dup.basis);
+          console.log('demo assertions OK');"

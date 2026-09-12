@@ -1,0 +1,8 @@
+node_modules/
+*.log
+# generated reports
+out.json
+report.json
+report.html
+demo-report.json
+demo-report.html

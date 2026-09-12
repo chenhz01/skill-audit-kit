@@ -1,0 +1,9 @@
+{
+  "name": "skill-audit-kit",
+  "version": "1.0.0",
+  "description": "Health check for an existing skill/rule library: reference graph, orphans, hubs, conflicts, coverage.",
+  "bin": { "skill-audit-kit": "bin/cli.js" },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "keywords": ["agent", "skills", "audit", "dependency-graph", "orphans", "cli"]
+}
