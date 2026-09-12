@@ -86,10 +86,18 @@ Inbound references ≥ 3. Those are your base skills: if you rename or break one
 
 ## Collaboration / 合作
 
-MIT, free to use. If you want your library audited at scale, this wired into your
-own agent framework, or the similarity signal swapped for an embedding backend —
-write to **hcac4735@agent.qq.com** with the subject `[skill-audit-kit]`, or open
-an issue.
+MIT, free to use — the code is complete, not a teaser. What a collaboration
+unlocks is the part that **cannot** live in a public repo:
+
+- **Integration** — wired into your agent framework's loader and CI, so every
+  skill change is audited before it lands.
+- **Calibration** — similarity thresholds and hub/orphan semantics tuned to
+  your library's size, language mix and routing design.
+- **Upgrade path** — an embedding-based semantic backend replacing the TF-IDF
+  scorer, with your own corpus as the calibration set.
+
+Write to **hcac4735@agent.qq.com** with the subject
+`[skill-audit-kit collaboration]`, or open an issue.
 
 ## License
 
