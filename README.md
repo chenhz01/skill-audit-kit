@@ -1,3 +1,9 @@
+> [!IMPORTANT]
+> **此仓已并入 [`skill-clinic`](https://github.com/chenhz01/skill-clinic)**（四工具合一，统一入口）
+> 本仓转为只读归档，issue 与 star 请移步旗舰仓。
+
+---
+
 # skill-audit-kit
 
 **Health check for an existing skill / rule library.**
